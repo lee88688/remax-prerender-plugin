@@ -1,0 +1,23 @@
+{
+  "name": "@monsterlee/remax-prerender-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "remax"
+  ],
+  "author": "Jimmie Lee <lee2py@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^16.6.0",
+    "micromatch": "^4.0.4",
+    "miniprogram-simulate": "^1.4.0",
+    "vm2": "^3.9.3"
+  }
+}
