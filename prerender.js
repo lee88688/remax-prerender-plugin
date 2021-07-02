@@ -30,10 +30,10 @@ class Prerender {
   async rewriteScript(type, path) {
     const realPath = this.getRealPath(path);
     const targetName = type === 'app' ? 'App' : 'Page';
-    const reg = new RegExp(`(${targetName}\\(.*?\\);)`)
+    const reg = new RegExp(`(${targetName}\\([^=]*?\\);)`);
     const script = await fsPromises.readFile(realPath, 'utf-8');
     const newScript = script.replace(reg, '_inst = $1');
-    const res = `var _inst;\n${newScript}\nif(PRERENDER){module.exports = _inst}`;
+    const res = `var _inst;\n${newScript}\nif(typeof PRERENDER !== 'undefined'){module.exports = _inst}`;
     await fsPromises.writeFile(realPath, res);
   }
   
