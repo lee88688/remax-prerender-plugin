@@ -90,15 +90,16 @@ class Prerender {
 
     const xmlPath = this.getRealPath(path, '.wxml');
     const pageXml = await fsPromises.readFile(xmlPath);
-    const index = pageXml.indexOf('<template');
-    const head = pageXml.slice(0, index); // import部分
-    const tail = pageXml.slice(index); // 模板部分
-    fsPromises.writeFile(xmlPath, `${head}<block wx:if="{{root.nodes}}">
-    ${tail}
-    </block>
-    <block wx:else>
-    ${xml}
-    </block>`);
+    // const index = pageXml.indexOf('<template');
+    // const head = pageXml.slice(0, index); // import部分
+    // const tail = pageXml.slice(index); // 模板部分
+    fsPromises.writeFile(xmlPath, `<import src="/base.wxml"/>
+<block wx:if="{{root.nodes}}">
+  <template is="REMAX_TPL" data="{{root: root}}" /> <template is="REMAX_TPL" data="{{ root: modalRoot }}" />
+</block>
+<block wx:else>
+  ${xml}
+</block>`);
   }
   
   async render() {
