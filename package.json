@@ -1,7 +1,6 @@
 {
   "name": "@monsterlee/remax-prerender-plugin",
   "version": "1.0.0",
-  "private": true,
   "description": "用于预渲染微信小程序的remax plugin",
   "main": "index.js",
   "scripts": {
