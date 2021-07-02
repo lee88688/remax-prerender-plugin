@@ -2,7 +2,7 @@
   "name": "@monsterlee/remax-prerender-plugin",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "用于预渲染微信小程序的remax plugin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,9 @@
     "micromatch": "^4.0.4",
     "miniprogram-simulate": "^1.4.0",
     "vm2": "^3.9.3"
-  }
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "engineStrict": true
 }
