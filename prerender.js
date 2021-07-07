@@ -59,7 +59,7 @@ class Prerender {
     const page = this.vm.run(`
     const page = require('${this.getRealPath(path)}');
     page.setData = () => {};
-    page.onLoad();
+    page.onLoad({});
     module.exports = page;
     `, this.runScriptPath);
     return JSON.parse(JSON.stringify(page.container.root.toJSON()));
